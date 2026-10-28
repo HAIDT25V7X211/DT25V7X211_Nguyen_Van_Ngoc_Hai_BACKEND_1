@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
 app.use("/api/contacts", contactsRouter);
 //handle 404 response
 app.use((req, res, next) => {
-    return next(new ApiError("Resource not found", 404));
+    return next(new ApiError(404,"Resource not found"));
 });
 
 //define error-handling middleware last, after other app.use() and routes calls
